@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block body %}
+    <div class="col-md-7">
+        <table class="table table-striped table-hover table-bordered table-sm bg-white">
+          <thead>
+            <tr>
+              <td>Hora</td>
+              <td>Lunes</td>
+              <td>Martes</td>
+              <td>Miercoles</td>
+              <td>Jueves</td>
+              <td>Viernes</td>
+            </tr>
+          </thead>
+          <tbody><!--con tbody llenaremos los elementos que vienen de la base de datos,pero antes haremos la consulta desde el App.py-->
+            {%for z in range(14)%}
+            <tr>
+              <td>
+                {{h[z]}}
+              </td>
+              {%for m in diad%}
+                <td>
+                  {%for d in t[z]%}<!--Para iterar la tupla de tuplas-->
+                    {%if d.2|string() == m%}<!--Comprueba  extrayendo el dia el curso , y coincide con el dia m (UBICA LA POSICION DEL CURSO POR DIA)-->
+                      {{d.1}} - {{d.6}}<!--Nombre y grupo perteneciente del curso-->
+                    {%endif%}
+                  {%endfor%}
+                </td>
+              {%endfor%}
+            </tr>
+            {%endfor%}
+          </tbody>
+        </table>
+    </div>
+{% endblock %}

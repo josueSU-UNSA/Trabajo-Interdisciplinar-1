@@ -1,0 +1,142 @@
+Create database flaskcontacts;
+Use flaskcontacts;
+
+create table `user`
+(
+	id int AUTO_INCREMENT NOT NULL,
+	cui int NOT NULL,
+	password text NOT NULL,
+	unique (cui),
+	primary key(id)
+);
+create table horarios
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios1
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios2
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios3
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios4
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios5
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios6
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios7
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table Horarios8
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios9
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);
+
+create table horarios10
+(
+	id int AUTO_INCREMENT NOT NULL,
+	curso text NOT NULL,
+	dia varchar(20) NOT NULL,
+	hora_inicio time NOT NULL,
+	hora_final time NOT NULL,
+	profesor text NOT NULL,
+	grupo varchar(3),
+	PRIMARY KEY (id)
+);

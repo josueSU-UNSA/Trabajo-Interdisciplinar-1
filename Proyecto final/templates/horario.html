@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% block body %}
+
+  <div class="row">
+    <div class="col-md-5">
+      {% with messages = get_flashed_messages()  %}
+      {% if messages %}
+      {% for message in messages %}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div> 
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+      <div class="card card-body">
+        <form action="{{url_for('add_course')}}" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="curso" placeholder="curso">
+          </div>
+          <div class="form-group">
+            <select name="dia" class="form-control">
+                <option value="Lunes">Lunes</option>
+                <option value="Martes" >Martes</option>
+                <option value="Miercoles">Miercoles</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <input type="time" class="form-control" name="hora_inicio" placeholder="hora_inicio">
+          </div>
+          <div class="form-group">
+            <input type="time" class="form-control" name="hora_final" placeholder="hora_final">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control" name="profesor" placeholder="profesor">
+          </div>
+          <div class="form-group"><label for="grupo">
+             </label> Grupo: </label> <br/>
+            <select name="grupo" class="form-control">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+             </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">
+            Save 
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <table class="table table-striped table-hover table-bordered table-sm bg-white">
+        <thead>
+          <tr>
+            <td>Curso</td>
+            <td>Dia(s)</td>
+            <td>Hora de inicio</td>
+            <td>Hora de fin</td>
+            <td>Profesor(a)</td>
+            <td>Grupo</td>
+            <!--Esta fila siguiente es para colocar los botones de eliminar-->
+            <td>Opciones</td>
+
+          </tr>
+        </thead>
+        <tbody><!--con tbody llenaremos los elementos que vienen de la base de datos,pero antes haremos la consulta desde el App.py-->
+          {% for horario in horarios %}
+          <tr>
+              <td>{{horario.1}}</td><!--esto me ayuda a mostrar el primer valro de la columna de cada seccion curso horario ,etc mostrandome los datos almacenados-->
+              <td>{{horario.2}}</td>
+              <td>{{horario.3}}</td>
+              <td>{{horario.4}}</td>
+              <td>{{horario.5}}</td>
+              <td>{{horario.6}}</td>
+              <td><!--estos seran botones que luciran como enlaces para editar o eliminar -->
+                  <a href="/delete/{{horario.0}}">Eliminar</a>
+              </td>
+              <td>
+  
+              </td>
+          </tr>
+          {% endfor%}
+        </tbody>
+      </table>
+      <a href="/comprobacion">
+      <button  style="top: 74.7%" type="submit" class="btn btn-primary btn-block">
+        Continue 
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
